@@ -1,0 +1,97 @@
+/*! PASO 2 */
+/* Como veis vamos a dar unos estilos un poco generales y a declarar 3 variables de colores, en este caso no es un proyecto muy grande y extenso y por lo tanto no nos hará falta mucho más, ya que lo importante estará en nuestro js, además estamos modificando la barra de scroll.
+Fijaros además que estamos utilizando la clase completed para tareas ya completadas.*/
+
+:root {
+  --rtc-color-1: rgb(255, 255, 255);
+  --rtc-color-2: rgb(207, 207, 207);
+  --rtc-color-3: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+}
+
+/* SCROLLBAR */
+/* width */
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background-color: var(--rtc-color-1);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--rtc-color-3);
+}
+
+.list {
+    width: 50%;
+    max-height: 50svh;
+    overflow-y: scroll;
+    border-radius: 20px 0px 0px 20px;
+    border: solid 3px black;
+}
+
+.list > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: none;
+}
+
+.list > li:last-child {
+    border-bottom: none;
+}
+
+.list > li.completed {
+    background-color: var(--rtc-color-2);
+    text-decoration: line-through;
+}
+
+.new {
+    display: flex;
+    padding: 40px;
+    font-size: 30px;
+    gap: 20px;
+}
+
+.new > input, .new > button {
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+.new > button {
+    cursor: pointer;
+}
